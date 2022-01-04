@@ -9,7 +9,13 @@ set(Example_VERSION_MAJOR 2)
 set(Example_VERSION_MINOR 3)
 set(Example_VERSION_PATCH 1)
 
-# This project consist of 3 components, each in one directory, so add each of them
+# All the libraries and executables compiled by CMake will be placed in the top level of the build directory so that the executables can find the libraries and it is easy to run everything.
+set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+include("./OneAgent-SDK-for-C/onesdk-config.cmake")
+
+# This project consist of 2 components, each in one directory, so add each of them
 add_subdirectory(DynamicLib)
 add_subdirectory(DemoApp)
 
@@ -25,4 +31,5 @@ set(CPACK_PACKAGE_VERSION_MAJOR ${Example_VERSION_MAJOR})
 set(CPACK_PACKAGE_VERSION_MINOR ${Example_VERSION_MINOR})
 set(CPACK_PACKAGE_VERSION_PATCH ${Example_VERSION_PATCH})
 include(CPack)
+
 
