@@ -12,10 +12,11 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 add_executable(Demo main.cpp version.h)
 
 # Demo application require both libraries, so add them
-target_link_libraries(Demo
-    DLib
-    onesdk_static
-)
+#target_link_libraries(Demo
+#    DLib
+#    onesdk_static
+#)
+target_link_libraries(Demo onesdk_static)
 
 # Point to which directory Demo is copied during installation and packaging
 install(TARGETS Demo DESTINATION demo)

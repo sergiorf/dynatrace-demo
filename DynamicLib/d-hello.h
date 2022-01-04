@@ -2,4 +2,7 @@
 
 #include "dlib_export.h"
 
-DLIB_EXPORT void dHelloFun();
+extern "C"
+{
+    DLIB_EXPORT void dHelloFun();
+}

@@ -33,9 +33,12 @@ static void InitOneSdk()
     SetConsoleTextAttribute(hConsole, 15); //set back to black background and white text
 }
 
-void dHelloFun()
+extern "C"
 {
-    InitOneSdk();
+    void dHelloFun()
+    {
+        InitOneSdk();
 
-	std::cout << "DynamicLibHello helloFun() just called" << std::endl;
+        std::cout << "DynamicLibHello helloFun() just called" << std::endl;
+    }
 }
